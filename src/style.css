@@ -214,7 +214,7 @@ img, video { display: block; max-width: 100%; }
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  transform: scale(1.15);
+  transform: scale(1.1601);
   position: relative;
   z-index: 2;
 }
