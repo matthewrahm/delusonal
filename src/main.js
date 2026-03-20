@@ -37,18 +37,10 @@ const navXLink = document.getElementById('nav-x-link');
 const navPumpLink = document.getElementById('nav-pump-link');
 const footerXLink = document.getElementById('footer-x-link');
 
-// ── Track video availability ──
-let videoLoaded = false;
-let explosionLoaded = false;
-
-const explosionVideo = document.getElementById('explosion-video');
-if (explosionVideo) {
-  explosionVideo.addEventListener('loadeddata', () => { explosionLoaded = true; });
-  explosionVideo.addEventListener('error', () => { explosionLoaded = false; });
-}
-
-video.addEventListener('loadeddata', () => { videoLoaded = true; });
-video.addEventListener('error', () => { videoLoaded = false; });
+// ── Background audio ──
+const bgMusic = new Audio('/audio.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.5;
 
 // ── Scroll video fallback ──
 const scrollVideo = document.getElementById('scroll-video');
@@ -58,7 +50,6 @@ if (scrollVideo) {
     scrollVideo.style.display = 'none';
     if (scrollVideoFallback) scrollVideoFallback.style.display = 'block';
   });
-  // Also check if source is missing after a moment
   setTimeout(() => {
     if (scrollVideo.networkState === 3 || scrollVideo.error) {
       scrollVideo.style.display = 'none';
@@ -67,35 +58,12 @@ if (scrollVideo) {
   }, 1000);
 }
 
-// ── Phase State Machine ──
-function goToPhase(name) {
-  Object.values(phases).forEach(el => el.classList.remove('active'));
-  phases[name].classList.add('active');
-  document.body.style.overflow = name === 'main' ? '' : 'hidden';
-}
+// ── Splash → Main (with background audio) ──
+btnEnter.addEventListener('click', () => {
+  // Start background audio
+  bgMusic.play().catch(() => {});
 
-// ── Splash → Video → Main ──
-function fadeToMain() {
-  phases.video.classList.add('fade-out');
-
-  // Only play explosion if the video loaded
-  if (explosionLoaded) {
-    playChromaExplosion();
-  }
-
-  setTimeout(() => {
-    bgAudio.appendChild(video);
-    video.style.display = 'none';
-    videoBg.pause();
-    phases.video.classList.remove('active', 'fade-out');
-    phases.main.classList.add('active');
-    document.body.style.overflow = '';
-    runHeroTypewriter();
-  }, 1500);
-}
-
-// ── Skip directly to main (no video) ──
-function fadeDirectToMain() {
+  // Fade splash out, go to main
   phases.splash.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
   phases.splash.classList.remove('active');
   setTimeout(() => {
@@ -103,39 +71,6 @@ function fadeDirectToMain() {
     document.body.style.overflow = '';
     runHeroTypewriter();
   }, 800);
-}
-
-btnEnter.addEventListener('click', () => {
-  // If video didn't load, skip directly to main
-  if (!videoLoaded) {
-    fadeDirectToMain();
-    return;
-  }
-
-  goToPhase('video');
-
-  try {
-    videoBg.currentTime = 0;
-    videoBg.play().catch(() => {});
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        goToPhase('main');
-        runHeroTypewriter();
-        return;
-      });
-    }
-    setTimeout(fadeToMain, 11000);
-  } catch {
-    goToPhase('main');
-    runHeroTypewriter();
-  }
-});
-
-video.addEventListener('ended', () => {
-  if (!phases.main.classList.contains('active')) {
-    fadeToMain();
-  }
 });
 
 // ── Wire up links ──
