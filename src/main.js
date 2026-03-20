@@ -8,7 +8,7 @@ import { playChromaExplosion } from './chromakey.js';
 // ── Config ──
 const CONFIG = {
   contractAddress: import.meta.env.VITE_CONTRACT_ADDRESS || '0'.repeat(44),
-  xTwitterUrl: import.meta.env.VITE_X_TWITTER_URL || 'https://x.com/placeholder',
+  xTwitterUrl: import.meta.env.VITE_X_TWITTER_URL || 'https://x.com/i/communities/2035040747565486211',
   get pumpUrl() { return `https://pump.fun/coin/${this.contractAddress}`; },
   get dexScreenerUrl() { return `https://dexscreener.com/solana/${this.contractAddress}`; },
 };
