@@ -213,7 +213,7 @@ img, video { display: block; max-width: 100%; }
 #intro-video {
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  object-fit: contain;
   position: relative;
   z-index: 2;
 }
