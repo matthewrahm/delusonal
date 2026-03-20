@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$DELUSION — Why Not Us?</title>
+  <meta name="description" content="$DELUSION — Why not us? The ones who believed long enough to make it real." />
+  <meta property="og:title" content="$DELUSION — Why Not Us?" />
+  <meta property="og:description" content="Why not us? The ones who believed long enough to make it real." />
+  <meta property="og:image" content="/Delusionnnnn.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="$DELUSION — Why Not Us?" />
+  <meta name="twitter:description" content="Why not us? The ones who believed long enough to make it real." />
+  <meta name="twitter:image" content="/Delusionnnnn.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="/Delusionallll.jpeg" />
+  <link rel="apple-touch-icon" href="/Delusionallll.jpeg" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/glitch.css" />
+</head>
+<body>
+
+  <!-- ═══════════ PHASE 1: SPLASH ═══════════ -->
+  <section id="phase-splash" class="phase active">
+    <div class="splash-content">
+      <h1 class="splash-title">
+        <span class="splash-line" id="line1"></span>
+        <span class="splash-line accent" id="line2"></span>
+      </h1>
+      <button id="btn-enter" class="btn-enter hidden">Enter the Delusion</button>
+    </div>
+    <div class="splash-particles" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════ PHASE 2: VIDEO ═══════════ -->
+  <section id="phase-video" class="phase">
+    <video id="intro-video-bg" class="video-bg" src="/video.mp4" playsinline muted></video>
+    <video id="intro-video" src="/video.mp4" playsinline></video>
+  </section>
+
+  <!-- ═══════════ PHASE 3: MAIN SITE ═══════════ -->
+  <section id="phase-main" class="phase">
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">$DELUSION</a>
+        <div class="nav-links" id="nav-links">
+          <a id="nav-pump-link" href="#" target="_blank" rel="noopener" class="nav-icon-link" aria-label="Pump.fun">
+            <img src="https://pump.fun/icon.png" alt="Pump.fun" width="20" height="20" />
+          </a>
+          <a id="nav-x-link" href="#" target="_blank" rel="noopener" class="nav-icon-link" aria-label="X / Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <h1 class="hero-title glitch" id="hero-title"></h1>
+        <p class="hero-tagline hero-fade" id="hero-tagline">Why not us?</p>
+        <div class="hero-buttons hero-fade" id="hero-buttons">
+          <a id="btn-buy" href="#" target="_blank" rel="noopener" class="btn btn-primary">Buy $DELUSION</a>
+          <button id="btn-copy-ca" class="btn btn-outline">Copy CA</button>
+          <a id="btn-dex" href="#" target="_blank" rel="noopener" class="btn btn-outline">DexScreener</a>
+        </div>
+        <p id="ca-display" class="ca-display hero-fade"></p>
+      </div>
+    </section>
+
+    <!-- EXPLOSION OVERLAY -->
+    <div id="explosion-overlay" class="explosion-overlay" aria-hidden="true">
+      <video id="explosion-video" src="/moneyexplosion.mp4" playsinline muted preload="auto"></video>
+      <canvas id="explosion-canvas"></canvas>
+    </div>
+
+    <!-- MILESTONE -->
+    <section class="section milestone-section">
+      <div class="container milestone-row">
+        <div class="milestone-left">
+          <h2 class="milestone-heading">Market Cap</h2>
+          <span class="milestone-value" id="milestone-mcap">$0</span>
+          <span class="milestone-sub">Live via DexScreener</span>
+        </div>
+        <div class="milestone-right">
+          <img src="/Delusionallll.jpeg" alt="Delusions of grandeur" class="gif-break-img glitch-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">Why Not Us?</h2>
+        <div class="about-grid">
+          <div class="about-card surface-card">
+            <h3>Why Not $100M?</h3>
+            <p>If other coins have reached a $100M market cap, there's nothing stopping this one from doing the same. And if $100M is possible, <em>why not $1B?</em> Why not beyond?</p>
+          </div>
+          <div class="about-card surface-card">
+            <h3>Believe Before the Proof</h3>
+            <p>Every project that made it big started with people who believed before there was proof. What looks "crazy" at the beginning often becomes obvious in hindsight.</p>
+          </div>
+          <div class="about-card surface-card">
+            <h3>Stay Relentless</h3>
+            <p>Growth doesn't have a ceiling unless we put one there. Stay committed. Stay a little unreasonable about what's possible. Because the ones who win are the ones who <em>believed long enough to make it real.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YOUTUBE -->
+    <section class="section youtube-section">
+      <div class="container">
+        <h2 class="section-title">The Vision</h2>
+        <div class="youtube-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/1l6cya6z2cc"
+            title="$DELUSION"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCROLL VIDEO -->
+    <section class="section scroll-video-section">
+      <div class="container scroll-video-wrap">
+        <video id="scroll-video" src="/scroll-video.mp4" playsinline muted loop autoplay preload="auto"></video>
+        <div id="scroll-video-fallback" class="scroll-video-fallback" style="display:none;">
+          <img src="/Delusionnnnn.jpeg" alt="The pawn that sees a king" />
+        </div>
+        <p class="scroll-video-text">The pawn that sees <span>a king.</span></p>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section id="tokenomics" class="section">
+      <div class="container">
+        <h2 class="section-title">Tokenomics</h2>
+        <div class="tokenomics-header">
+          <div class="stat-card featured surface-elevated">
+            <span class="stat-label">Market Cap</span>
+            <span id="market-cap" class="stat-value">Loading...</span>
+            <span class="stat-sub">Live via DexScreener</span>
+          </div>
+        </div>
+        <div class="dex-embed-wrap" id="dex-embed-wrap">
+          <div id="dex-placeholder" class="dex-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <p class="dex-placeholder-title">Chart Coming Soon</p>
+            <p class="dex-placeholder-sub">Live DexScreener chart will appear here once the token is live.</p>
+          </div>
+          <iframe src="about:blank" id="dex-iframe" class="dex-iframe-hidden" style="width:100%;height:500px;border:0;border-radius:var(--radius);"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="section banner-section">
+      <div class="container">
+        <img src="/Delusionnnnn.jpeg" alt="The pawn that sees a king" class="banner-img" />
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <span class="footer-logo">$DELUSION</span>
+            <p class="footer-ca" id="footer-ca"></p>
+          </div>
+          <div class="footer-links">
+            <a id="footer-x-link" href="#" target="_blank" rel="noopener" aria-label="X / Twitter">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="disclaimer">$DELUSION is a meme coin with no intrinsic value or expectation of financial return. This is not financial advice. Trade at your own risk.</p>
+      </div>
+    </footer>
+
+  </section>
+
+  <!-- Persistent container for background audio -->
+  <div id="bg-audio" aria-hidden="true"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
