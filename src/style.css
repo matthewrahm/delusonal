@@ -211,12 +211,10 @@ img, video { display: block; max-width: 100%; }
   pointer-events: none;
 }
 #intro-video {
-  position: absolute;
-  inset: -1px 0 0 0;
-  width: 100%;
-  height: calc(100% + 1px);
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  object-position: center top;
+  position: relative;
   z-index: 2;
 }
 #phase-video.fade-out {
